@@ -1,0 +1,68 @@
+
+
+<html>
+<head>
+{% load staticfiles %}
+
+</head>
+<h2>AngularJS Sample Application</h2>
+<div ng-app="myApp" ><div ng-controller="studentController">
+<table>
+   <tr>
+      <th>Name</th>
+      <th>Roll No</th>
+	  <th>Percentage</th>
+<th>STYLE</th>
+   </tr>
+   <tr ng-repeat="student in students">
+{% verbatim %} 
+     <td>{{students.title}}</td>
+      <td>{{ students.language }}</td>
+      <td>{{ students.code}}</td>
+      <td>{{students.style}}</td>
+{% endverbatim %} 
+</tr>
+</table>
+</div>
+<div ng-controller="student2Controller">
+<table>
+   <tr>
+      <th>FIrstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+
+   </tr>
+<tr ng-repeat="student in students2">
+{% verbatim %}    
+      <td>{{student.first_name}}</td>
+      <td>{{ student.last_name }}</td>
+      <td>{{ student.email}}</td>
+ {% endverbatim %}
+</tr>
+</table>
+</div>
+<div ng-controller="MyCtrl">
+{% verbatim %} 
+<p>{{post}}</p>
+{% endverbatim %}
+</div>
+<div ng-controller="Abc">
+<form method="post">
+<input type="text" ng-model="firstname">
+<input type="text" ng-model="lastname">
+<input type="email" ng-model="email">
+<input type="button" ng-click="add()" name="add">
+</form>
+{% verbatim %} 
+<p>{{hello}}</p>
+{% endverbatim %}	
+</div>
+</div>
+<script src="{% static 'js/angular.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/studentController.js' %}"></script>
+<script src="{% static 'js/student2Controller.js' %}"></script>
+<script src="{% static 'js/MyCtrl.js' %}"></script>
+<script src="{% static 'js/Abc.js' %}"></script>
+</body>
+</html>
